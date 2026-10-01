@@ -1,0 +1,124 @@
+{
+  "run_id": "E1-uncertainty-profile-preflight-2026-10-01",
+  "status": "not_reproduced",
+  "date": "2026-10-01",
+  "cost_usd": 0,
+  "selected_reference": {
+    "name": "AIMO-Interp uncertainty-profiling baseline",
+    "repository": "aimo-interp/getting-started",
+    "repository_commit": "de794053debe75a711400696e66b60937cebbb1b",
+    "files": {
+      "README.md": "56c6487bad5227c59f589fdb7185fbdbfc59564d",
+      "compute_uncertainty_features.py": "2eceea3bf2a520ec463795208bbaf2ca43c796f0",
+      "train_uncertainty_regressor.py": "cbcdc59e91afd3f52366d4dfc6137330ddf5e29e",
+      "inference.py": "0bcffbf32bf9d6bf6d13a17b3c78617a2273b435",
+      "artifact_joblib": "7d3283e3ef065f5397a512c5a6760722ab05e3c2"
+    },
+    "dataset": {
+      "id": "aimo-interp/augmented-sample-math-agg",
+      "revision": "f972ced0705096f8d7ca7fac30825900b8b7fb6a",
+      "config": "default",
+      "split": "validation",
+      "rows": 141,
+      "unique_problem_ids": 137
+    },
+    "model": {
+      "id": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+      "revision": "6e8885a6ff5c1dc5201574c8fd700323f23c25fa"
+    },
+    "generation": {
+      "prompt": "One user message containing the original problem, rendered with the checkpoint tokenizer chat template and generation prompt; fallback to raw text if template application fails.",
+      "max_prompt_tokens": 2048,
+      "max_new_tokens": 4096,
+      "do_sample": false,
+      "batch_size": 8,
+      "cache_implementation": "static",
+      "min_k_fraction": 0.2,
+      "high_conf_threshold": 0.9,
+      "low_conf_threshold": 0.1,
+      "seed": 42
+    },
+    "training": {
+      "splitter": "StratifiedGroupKFold",
+      "group_column": "original_problem",
+      "n_splits": 5,
+      "seed": 42,
+      "candidates": [
+        "RandomForestRegressor",
+        "ExtraTreesRegressor",
+        "HistGradientBoostingRegressor"
+      ],
+      "selected": {
+        "estimator": "RandomForestRegressor",
+        "n_estimators": 500,
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "max_features": 1.0,
+        "decision_threshold": 0.576
+      }
+    },
+    "runtime_versions": {
+      "pytorch": "2.12.1",
+      "cuda": "13.2",
+      "accelerate": "1.13.0",
+      "huggingface_hub": "1.22.0",
+      "joblib": "1.5.3",
+      "pandas": "3.0.3",
+      "scikit_learn": "1.8.0",
+      "tokenizers": "0.22.2",
+      "transformers": "5.13.0"
+    }
+  },
+  "upstream_reported_metrics_not_reproduced": {
+    "grouped_oof_accuracy": 0.6879,
+    "grouped_oof_balanced_accuracy": 0.6262,
+    "grouped_oof_regression_mae": 0.3429,
+    "source": "Pinned upstream uncertainty-profiling README and checked-in artifact description"
+  },
+  "same_dataset_control_results_from_e0_not_same_split": {
+    "e0_run_id": "E0-controls-2026-10-01",
+    "splitter": "deterministic greedy stratified group folds",
+    "seed": 20261001,
+    "n_folds": 5,
+    "majority_accuracy": 0.7372262773722628,
+    "majority_balanced_accuracy": 0.5,
+    "text_unigram_nb_accuracy": 0.6934306569343066,
+    "text_unigram_nb_balanced_accuracy": 0.5328657865786579,
+    "comparison_status": "not directly comparable; fold assignments differ from upstream StratifiedGroupKFold seed 42"
+  },
+  "preflight": {
+    "nvidia_smi_available": false,
+    "checkpoint_cache_found": false,
+    "bundled_python_packages": {
+      "numpy": true,
+      "pandas": true,
+      "torch": false,
+      "transformers": false,
+      "scikit_learn": false,
+      "joblib": false,
+      "pyarrow": false
+    },
+    "feature_parquet_available": false,
+    "feature_generation_started": false,
+    "training_started": false,
+    "inference_seconds": null,
+    "peak_memory_bytes": null,
+    "prediction_coverage": null,
+    "invalid_predictions": null,
+    "blocker": "No local GPU or pinned model cache, and the bundled Python lacks the inference and artifact/training packages; feature extraction and scoring were not run."
+  },
+  "submission_coverage": {
+    "learned_artifacts": 1,
+    "main_track_model_ids": 5,
+    "small_track_model_ids": 4,
+    "uses_reasoning_effort": false,
+    "unsupported_model_fallback": "all False"
+  },
+  "limitations": [
+    "No baseline predictions or metrics were independently reproduced; upstream OOF values are reported reference values only.",
+    "E0 control metrics use a different grouped splitter and are not a paired comparison.",
+    "Inference throughput, peak memory, and private evaluation coverage remain unmeasured.",
+    "No paid GPU, package installation, or external model API was used."
+  ]
+}
+
