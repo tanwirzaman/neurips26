@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import collections
 import concurrent.futures
+import difflib
 import hashlib
 import json
 import unicodedata
@@ -181,6 +182,24 @@ def summarize(dataset: str, revision: str, split: str) -> tuple[dict[str, Any], 
             "\n".join(json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(",", ":")) for row in projection_rows).encode("utf-8")
         ).hexdigest(),
     }
+    if dataset == "aimo-interp/train-main-v2":
+        unique_texts = {text_hash(row): normalized_text(row) for row in rows}
+        fingerprints = sorted(unique_texts)
+        near_pairs = []
+        for index, left in enumerate(fingerprints):
+            for right in fingerprints[index + 1 :]:
+                similarity = difflib.SequenceMatcher(
+                    None, unique_texts[left], unique_texts[right], autojunk=False
+                ).ratio()
+                if similarity >= 0.90:
+                    near_pairs.append(
+                        {
+                            "left_text_sha256": left,
+                            "right_text_sha256": right,
+                            "sequence_similarity": round(similarity, 4),
+                        }
+                    )
+        report["near_prompt_pairs_at_similarity_0_90_or_higher"] = near_pairs
     return report, rows
 
 
@@ -220,6 +239,7 @@ def main() -> None:
         "audit_date": "2026-10-01",
         "source": "Hugging Face Hub metadata API and datasets-server rows API",
         "family_proxy": "dataset_id + problem_id where available; normalized exact problem text hash for cross-dataset overlap and rows without problem_id. This is not semantic-family annotation.",
+        "problem_family_caveat": "train-main-v2 card reports 28 underlying problems, but the dataset lacks family IDs and contains 36 exact normalized prompt strings. Similarity candidates are evidence for review only, not assigned families.",
         "text_normalization": "Unicode NFKC, casefold, collapse whitespace; no fuzzy or mathematical-equivalence deduplication.",
         "prediction_feature_policy": "Labels and perturbation outcomes are inspected only for this data audit; do not pass them to prediction-time code.",
         "evaluation_model_ids": sorted(EVALUATION_MODELS),
