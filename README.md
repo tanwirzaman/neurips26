@@ -5,7 +5,7 @@ validated. See [minimal entry](docs/minimal-entry.md) for ZIPs, reproduction and
 results. No Codabench score has been obtained yet. Earlier analysis and the
 readiness audit describe the state before this implementation.
 
-Research and participation plan, checked 2026-10-01. Project repository: [tanwirzaman/neurips26](https://github.com/tanwirzaman/neurips26). No competition submission has been made. No model has been trained or benchmark beaten.
+Research and participation plan, checked 2026-10-01. Project repository: [tanwirzaman/neurips26](https://github.com/tanwirzaman/neurips26). No model has been trained or baseline beaten.
 
 Start with [requirements](docs/requirements.md), [baseline audit](docs/baselines.md), and [experiment plan](docs/plan.md).
 
