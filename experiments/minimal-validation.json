@@ -1,0 +1,52 @@
+{
+  "method": "always_true",
+  "dataset_revision": "1ae454ec1fad9727084eda8f9f3c9ae2239b21de",
+  "rows_sha256": "f6f7150d4a85715b74d3032a611712cfe742b43430e4072c4eedcc9ad6398c52",
+  "harness_blob_shas": {
+    "ingestion.py": "aba27e901b4595404c53c2763c6d21be2ae8d772",
+    "scoring.py": "0070d8fffa4351b7b12fb85648af0b0b88c04540",
+    "import_hf_dataset.py": "90992e4975f2d7a06625400a602db68f1e484ea6"
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "contract_cases": 60,
+  "docker_tested": false,
+  "codabench_submission_id": null,
+  "codabench_score": null,
+  "paid_compute_usd": 0,
+  "tracks": {
+    "main": {
+      "zip": "minimal-always-true-main.zip",
+      "sha256": "664f9cd23e93c8424530898f3423153c25ff9c4593a98d0ab1152e3efac93c6e",
+      "bytes": 392,
+      "local_scores": {
+        "accuracy": 0.375,
+        "coverage": 1.0,
+        "invalid_predictions": 0
+      },
+      "two_ingestions_plus_scoring_seconds": 0.44165279995650053,
+      "wrong_track_rejected": true
+    },
+    "small": {
+      "zip": "minimal-always-true-small.zip",
+      "sha256": "8190cb7b5f565fbf742dfe18e91580971885fbb6661b84367071654daf488c0a",
+      "bytes": 486,
+      "local_scores": {
+        "accuracy": 0.375,
+        "coverage": 1.0,
+        "invalid_predictions": 0
+      },
+      "two_ingestions_plus_scoring_seconds": 0.47099079994950444,
+      "wrong_track_rejected": true
+    }
+  },
+  "sample": {
+    "source_rows": 28,
+    "cases": 24,
+    "duplicate_rows_removed": 4,
+    "label_counts": {
+      "false": 15,
+      "true": 9
+    }
+  },
+  "note": "Both variants use 24 unique public cases from 28 source rows; these are not private track scores."
+}

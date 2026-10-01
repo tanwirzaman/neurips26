@@ -8,6 +8,7 @@ data/
 artifacts/
 dist/
 cache/
+work/
 *.pt
 *.safetensors
 *.joblib
