@@ -1,0 +1,14 @@
+{
+  "competition_id": 16180,
+  "submission_id": 955339,
+  "track": "small",
+  "task_id": 36241,
+  "file": "submissions/minimal-always-true-small.zip",
+  "sha256": "8190cb7b5f565fbf742dfe18e91580971885fbb6661b84367071654daf488c0a",
+  "status": "Submitted",
+  "score": null,
+  "observed_at_utc": "2026-10-01T15:33:00Z",
+  "submission_page": "https://www.codabench.org/competitions/16180/#/participate-tab",
+  "paid_compute_usd": 0,
+  "note": "Upload accepted. Organizer evaluation still pending; do not confuse local sample accuracy with a Codabench score."
+}
