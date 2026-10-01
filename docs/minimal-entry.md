@@ -52,9 +52,11 @@ Full results: `experiments/minimal-validation.json`.
 
 ## Remote status
 
-No Codabench score or submission ID has been obtained yet. Authentication and
-the competition submission UI must be accessible to finish this step. Null
-remote fields in the validation JSON deliberately distinguish local testing
-from an accepted remote submission.
+Codabench accepted Small Models submission **955339** and displayed accuracy
+**0.50**. This is the score for this deliberately trivial smoke-test method; it
+does not beat the published trained baseline. Codabench shows fewer decimal
+places than the local result record, so the platform's displayed score is the
+authoritative remote value. See `experiments/codabench-955339.json` for the
+submission details. Local public-sample accuracy is a separate result.
 
 External compute spending: **$0**. No paid resources were provisioned.
