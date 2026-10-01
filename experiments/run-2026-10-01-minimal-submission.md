@@ -11,7 +11,7 @@
 2. Built Small Models and Main Track ZIPs. Both bundles were checked for archive integrity, stable SHA-256 hashes, correct root files and rejection on the wrong track.
 3. Prepared the official ingestion, scoring and dataset-import scripts from pinned Git blob SHAs. Downloaded the public sample at dataset revision `1ae454ec1fad9727084eda8f9f3c9ae2239b21de` and recorded the response hash.
 4. Ran local public-sample scoring and 60 submission-contract permutations across model, effort and input combinations. Also checked empty, repeated, long Unicode-containing inputs and deterministic predictions.
-5. Uploaded the Small Models ZIP to Codabench competition 16180, task 36241. Codabench finished submission 955339 and displayed accuracy 0.50. One of ten daily submissions was used. The Codabench result did not provide evaluation logs.
+5. Codabench upload required an authenticated Chrome session and enabling local file access for the browser. After that access was corrected, uploaded the Small Models ZIP to competition 16180, task 36241. Codabench finished submission 955339 and displayed accuracy 0.50. One of ten daily submissions was used. The Codabench result did not provide evaluation logs.
 6. No GPU training, paid compute, external API calls, Main Track Codabench submission or Docker/organizer-image test was performed.
 
 ## Results
