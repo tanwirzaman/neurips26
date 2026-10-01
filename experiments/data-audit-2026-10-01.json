@@ -2,6 +2,7 @@
   "audit_date": "2026-10-01",
   "source": "Hugging Face Hub metadata API and datasets-server rows API",
   "family_proxy": "dataset_id + problem_id where available; normalized exact problem text hash for cross-dataset overlap and rows without problem_id. This is not semantic-family annotation.",
+  "problem_family_caveat": "train-main-v2 card reports 28 underlying problems, but the dataset lacks family IDs and contains 36 exact normalized prompt strings. Similarity candidates are evidence for review only, not assigned families.",
   "text_normalization": "Unicode NFKC, casefold, collapse whitespace; no fuzzy or mathematical-equivalence deduplication.",
   "prediction_feature_policy": "Labels and perturbation outcomes are inspected only for this data audit; do not pass them to prediction-time code.",
   "evaluation_model_ids": [
@@ -636,6 +637,53 @@
       "groups_with_conflicting_labels": 0,
       "dataset_server_truncated_cells_by_column": {},
       "audit_projection_sha256": "0a051b8112d06ea9cc87d520af005643f8c12df7a6a7a133f3cb96ee0c06ff11",
+      "near_prompt_pairs_at_similarity_0_90_or_higher": [
+        {
+          "left_text_sha256": "0ae2471073cafae16cefbb1dea545c98b8bd3ffb042f5a5a60c34740209d2834",
+          "right_text_sha256": "7c8aa7536eff593caf9e59911db6da167e52e240e865d560ecb7228ab405404e",
+          "sequence_similarity": 0.9789
+        },
+        {
+          "left_text_sha256": "0ae2471073cafae16cefbb1dea545c98b8bd3ffb042f5a5a60c34740209d2834",
+          "right_text_sha256": "c2417e6acfbb6e0ddf935cb807a7435d2737bbfe9ce17f69a9457b0429127a6e",
+          "sequence_similarity": 0.981
+        },
+        {
+          "left_text_sha256": "0df25366aaa96bf7ed1e872207b1e18cd901202b17de2a5c53bf929fbc9a0537",
+          "right_text_sha256": "152c5d288318e4f9b7de184cc5198472487b7a9316fa701ab69ea83d3a98771a",
+          "sequence_similarity": 0.9917
+        },
+        {
+          "left_text_sha256": "301406188c8b2770a2dffc0e801cc3a5541c4899730b33c6e7990c070e8eaea0",
+          "right_text_sha256": "42d1fd916218ebe56e57ae625cf96304dfa26e696d44c5d09b09566c6c334865",
+          "sequence_similarity": 0.9286
+        },
+        {
+          "left_text_sha256": "3ee890f92ecded9259b387d85df153fbf65bdd1991ac6d92b436b650fa8f2207",
+          "right_text_sha256": "5b3e96dfda97567cb361f1e45654a6c28b59fbcb3254b8e49b170b5e516d9dc4",
+          "sequence_similarity": 0.9985
+        },
+        {
+          "left_text_sha256": "5c2cdad23dcf541756111d57914c6e63771b0bc335af7dfa42dfc8459eda9dd1",
+          "right_text_sha256": "a630de760e92a6132efab3b7fa9514343ec416f7d00069fadb55aa01b91733d7",
+          "sequence_similarity": 0.9625
+        },
+        {
+          "left_text_sha256": "6b9919b5a97b3accc99334acf46717559598a52ef234e72a7ffefc0b251b32e8",
+          "right_text_sha256": "bef35333dbebfb066e4371a8b32e85582639cef8912f2b9febecb56756d0026e",
+          "sequence_similarity": 0.977
+        },
+        {
+          "left_text_sha256": "6fd5172046c07f6cef53761e2a5d8a5ab29c74075ae916d3b2b1773f10113a07",
+          "right_text_sha256": "92b4b04844ab0aa6e8677bb7f6d44dafb1d54372c4eb2834dc8b4a9aa0dd35a8",
+          "sequence_similarity": 0.9905
+        },
+        {
+          "left_text_sha256": "7c8aa7536eff593caf9e59911db6da167e52e240e865d560ecb7228ab405404e",
+          "right_text_sha256": "c2417e6acfbb6e0ddf935cb807a7435d2737bbfe9ce17f69a9457b0429127a6e",
+          "sequence_similarity": 0.9822
+        }
+      ],
       "public": true,
       "gated": false,
       "license_metadata": "other",
@@ -650,6 +698,7 @@
         "library:mlcroissant",
         "region:us"
       ],
+      "dataset_card_reported_problem_count": 28,
       "exact_normalized_problem_text_overlap_with_train_main_v2": 36,
       "exact_evaluation_model_id_matches": [
         "Qwen/Qwen3.5-4B",
