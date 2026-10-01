@@ -34,7 +34,9 @@ not interchangeable: model/configuration prompts may be variants of the same
 source problem. The public data does not provide the mapping needed to build a
 defensible family-disjoint split. Do not split rows randomly or claim the 36
 strings are independent families. Request or construct a reviewed mapping
-before using cross-validation or a final holdout.
+before using cross-validation or a final holdout. A stdlib similarity scan
+found nine prompt pairs with sequence similarity at least 0.90; their hashes
+and scores are in the JSON as review candidates, not automatic family merges.
 
 The machine audit checked exact normalized-text overlap with `train-main-v2`.
 Five of the eight problem texts in `val-sample` also occur in `train-main-v2`;
