@@ -10,8 +10,8 @@
   "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
   "contract_cases": 60,
   "docker_tested": false,
-  "codabench_submission_id": null,
-  "codabench_score": null,
+  "codabench_submission_id": 955339,
+  "codabench_score": 0.5,
   "paid_compute_usd": 0,
   "tracks": {
     "main": {
@@ -20,7 +20,7 @@
       "bytes": 392,
       "local_scores": {
         "accuracy": 0.375,
-        "coverage": 1.0,
+        "coverage": 1,
         "invalid_predictions": 0
       },
       "two_ingestions_plus_scoring_seconds": 0.44165279995650053,
@@ -32,7 +32,7 @@
       "bytes": 486,
       "local_scores": {
         "accuracy": 0.375,
-        "coverage": 1.0,
+        "coverage": 1,
         "invalid_predictions": 0
       },
       "two_ingestions_plus_scoring_seconds": 0.47099079994950444,
@@ -48,5 +48,6 @@
       "true": 9
     }
   },
-  "note": "Both variants use 24 unique public cases from 28 source rows; these are not private track scores."
+  "note": "Both variants use 24 unique public cases from 28 source rows; these are not private track scores.",
+  "codabench_track": "small"
 }
