@@ -1,0 +1,664 @@
+{
+  "audit_date": "2026-10-01",
+  "source": "Hugging Face Hub metadata API and datasets-server rows API",
+  "family_proxy": "dataset_id + problem_id where available; normalized exact problem text hash for cross-dataset overlap and rows without problem_id. This is not semantic-family annotation.",
+  "text_normalization": "Unicode NFKC, casefold, collapse whitespace; no fuzzy or mathematical-equivalence deduplication.",
+  "prediction_feature_policy": "Labels and perturbation outcomes are inspected only for this data audit; do not pass them to prediction-time code.",
+  "evaluation_model_ids": [
+    "Qwen/Qwen3.5-4B",
+    "Skywork/Skywork-OR1-Math-7B",
+    "allenai/Olmo-3-7B-Think",
+    "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+    "openai/gpt-oss-120b"
+  ],
+  "datasets": [
+    {
+      "dataset": "aimo-interp/val-sample",
+      "revision": "1ae454ec1fad9727084eda8f9f3c9ae2239b21de",
+      "split": "validation",
+      "rows": 28,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "model_is_robust",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "model_is_robust": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": "model_is_robust",
+      "label_counts": {
+        "True": 9,
+        "False": 19
+      },
+      "unique_problem_model_effort_label_counts": {
+        "True": 9,
+        "False": 15
+      },
+      "row_label_counts_by_model_effort": {
+        "Qwen/Qwen3.5-397B-A17B-FP8:low | low": {
+          "True": 1,
+          "False": 6
+        },
+        "gemini-3.1-pro-preview:low | low": {
+          "False": 3
+        },
+        "gpt-5.2-2025-12-11:low | low": {
+          "True": 3
+        },
+        "gpt-oss-120b:low | low": {
+          "False": 7
+        },
+        "huikang-gpt-oss-120b-aimo3:low | low": {
+          "True": 1,
+          "False": 2
+        },
+        "lukealonso/GLM-5.1-NVFP4:low | low": {
+          "True": 4
+        },
+        "qwen3-8b:low | low": {
+          "False": 1
+        }
+      },
+      "model_ids": [
+        "Qwen/Qwen3.5-397B-A17B-FP8:low",
+        "gemini-3.1-pro-preview:low",
+        "gpt-5.2-2025-12-11:low",
+        "gpt-oss-120b:low",
+        "huikang-gpt-oss-120b-aimo3:low",
+        "lukealonso/GLM-5.1-NVFP4:low",
+        "qwen3-8b:low"
+      ],
+      "reasoning_efforts": [
+        "low"
+      ],
+      "dataset_ids": [
+        "aimo-2025-reference"
+      ],
+      "distinct_problem_ids": 8,
+      "distinct_normalized_problem_texts": 8,
+      "problem_model_effort_groups": 24,
+      "repeated_rows_for_same_problem_model_effort": 4,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "959f9a3797f94a516c02af164d734f1851e9e66fa6bcde07b6f5c7ab5e8363b7",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 5,
+      "exact_evaluation_model_id_matches": []
+    },
+    {
+      "dataset": "aimo-interp/augmented-sample-math",
+      "revision": "e1aaca9895b31fc9ce3d8d0d4e2f3009f6ca8090",
+      "split": "validation",
+      "rows": 156,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "model_is_robust",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "model_is_robust": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": "model_is_robust",
+      "label_counts": {
+        "False": 156
+      },
+      "unique_problem_model_effort_label_counts": {
+        "False": 49
+      },
+      "row_label_counts_by_model_effort": {
+        "meta-llama__Llama-3.1-8B-Instruct_low | low": {
+          "False": 156
+        }
+      },
+      "model_ids": [
+        "meta-llama__Llama-3.1-8B-Instruct_low"
+      ],
+      "reasoning_efforts": [
+        "low"
+      ],
+      "dataset_ids": [
+        "hendrycks-math-test-reference-100"
+      ],
+      "distinct_problem_ids": 49,
+      "distinct_normalized_problem_texts": 49,
+      "problem_model_effort_groups": 49,
+      "repeated_rows_for_same_problem_model_effort": 107,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "a8212c2bff2f44bd245e008dad4a1864e44e6c36c2ee4f75d3976664e43a1218",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 0,
+      "exact_evaluation_model_id_matches": []
+    },
+    {
+      "dataset": "aimo-interp/augmented-sample-math-full-filtered",
+      "revision": "f09e41ed0648b0ff7cac220c6ce9150a36e2e8b0",
+      "split": "validation",
+      "rows": 259,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": null,
+      "label_counts": {},
+      "unique_problem_model_effort_label_counts": {},
+      "row_label_counts_by_model_effort": {},
+      "model_ids": [
+        "qwen3-8b:low"
+      ],
+      "reasoning_efforts": [
+        "low"
+      ],
+      "dataset_ids": [
+        "hendrycks-math-test-reference-100"
+      ],
+      "distinct_problem_ids": 69,
+      "distinct_normalized_problem_texts": 69,
+      "problem_model_effort_groups": 69,
+      "repeated_rows_for_same_problem_model_effort": 190,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "7e98b899f8a0a88a3cc8e2481e531a010959ce331f22191a11039661ff77b40e",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 0,
+      "exact_evaluation_model_id_matches": []
+    },
+    {
+      "dataset": "aimo-interp/augmented-sample-math-agg-filtered",
+      "revision": "0607cd06cbd789dd33655ff718bbfae0d3edba7c",
+      "split": "validation",
+      "rows": 54,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "model_is_robust",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "model_is_robust": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": "model_is_robust",
+      "label_counts": {
+        "True": 11,
+        "False": 43
+      },
+      "unique_problem_model_effort_label_counts": {
+        "True": 11,
+        "False": 41
+      },
+      "row_label_counts_by_model_effort": {
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B | default": {
+          "True": 11,
+          "False": 43
+        }
+      },
+      "model_ids": [
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+      ],
+      "reasoning_efforts": [],
+      "dataset_ids": [
+        "hendrycks-math-test-reference-100"
+      ],
+      "distinct_problem_ids": 52,
+      "distinct_normalized_problem_texts": 52,
+      "problem_model_effort_groups": 52,
+      "repeated_rows_for_same_problem_model_effort": 2,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "557d83cda7d07fe11b1e43b05110fa034c6ea09d54fcc3b3fa60a9ab706e68c8",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 0,
+      "exact_evaluation_model_id_matches": [
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+      ]
+    },
+    {
+      "dataset": "aimo-interp/aimo-interp-challenge-sample-full",
+      "revision": "c0ffb7e678294cc8819d50d979ba28ba49bd02d0",
+      "split": "validation",
+      "rows": 558,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": null,
+      "label_counts": {},
+      "unique_problem_model_effort_label_counts": {},
+      "row_label_counts_by_model_effort": {},
+      "model_ids": [
+        "Qwen/Qwen3.5-397B-A17B-FP8:low",
+        "gemini-3.1-pro-preview:low",
+        "gpt-5.2-2025-12-11",
+        "gpt-5.2-2025-12-11:low",
+        "gpt-oss-120b:low",
+        "huikang-gpt-oss-120b-aimo3:low",
+        "lukealonso/GLM-5.1-NVFP4:low",
+        "qwen3-8b:low"
+      ],
+      "reasoning_efforts": [
+        "low"
+      ],
+      "dataset_ids": [
+        "aimo-2025-reference"
+      ],
+      "distinct_problem_ids": 10,
+      "distinct_normalized_problem_texts": 10,
+      "problem_model_effort_groups": 80,
+      "repeated_rows_for_same_problem_model_effort": 478,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "ca2c42a3d52bf54484b623bfc79ae9078cb0d84357d1bc96137073e8fadbf8f9",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 5,
+      "exact_evaluation_model_id_matches": []
+    },
+    {
+      "dataset": "aimo-interp/augmented-sample-math-agg",
+      "revision": "f972ced0705096f8d7ca7fac30825900b8b7fb6a",
+      "split": "validation",
+      "rows": 141,
+      "schema": [
+        "absolute_accuracy_decay",
+        "base_accuracy",
+        "dataset_id",
+        "model_id",
+        "model_is_robust",
+        "n_base_predictions",
+        "n_detrimental_permutations",
+        "n_permuted_predictions",
+        "original_problem",
+        "permutation_source",
+        "permutation_type",
+        "permutations_causing_decay",
+        "permuted_accuracy",
+        "problem_id",
+        "relative_accuracy_decay"
+      ],
+      "missing_or_empty_by_column": {
+        "absolute_accuracy_decay": 0,
+        "base_accuracy": 0,
+        "dataset_id": 0,
+        "model_id": 0,
+        "model_is_robust": 0,
+        "n_base_predictions": 0,
+        "n_detrimental_permutations": 0,
+        "n_permuted_predictions": 0,
+        "original_problem": 0,
+        "permutation_source": 0,
+        "permutation_type": 0,
+        "permutations_causing_decay": 0,
+        "permuted_accuracy": 0,
+        "problem_id": 0,
+        "relative_accuracy_decay": 0
+      },
+      "label_field": "model_is_robust",
+      "label_counts": {
+        "True": 36,
+        "False": 105
+      },
+      "unique_problem_model_effort_label_counts": {
+        "True": 36,
+        "False": 101
+      },
+      "row_label_counts_by_model_effort": {
+        "qwen3-8b:low | low": {
+          "True": 36,
+          "False": 105
+        }
+      },
+      "model_ids": [
+        "qwen3-8b:low"
+      ],
+      "reasoning_efforts": [
+        "low"
+      ],
+      "dataset_ids": [
+        "hendrycks-math-test-reference-100",
+        "hendrycks-math-train-reference-500"
+      ],
+      "distinct_problem_ids": 137,
+      "distinct_normalized_problem_texts": 137,
+      "problem_model_effort_groups": 137,
+      "repeated_rows_for_same_problem_model_effort": 4,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "b62ac913c2d2d1d68a64140ca964f1c16ad009fb7e5a0a7690bf3ee3a00a89df",
+      "public": true,
+      "gated": false,
+      "license_metadata": null,
+      "metadata_tags": [
+        "size_categories:n<1K",
+        "format:parquet",
+        "format:optimized-parquet",
+        "modality:tabular",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 0,
+      "exact_evaluation_model_id_matches": []
+    },
+    {
+      "dataset": "aimo-interp/train-main-v2",
+      "revision": "23791d9b120132087877b0459f953d5959fc8455",
+      "split": "train",
+      "rows": 82,
+      "schema": [
+        "is_robust",
+        "max_drop",
+        "model_id",
+        "problem",
+        "reasoning_effort"
+      ],
+      "missing_or_empty_by_column": {
+        "is_robust": 11,
+        "max_drop": 0,
+        "model_id": 0,
+        "problem": 0,
+        "reasoning_effort": 0
+      },
+      "label_field": "is_robust",
+      "label_counts": {
+        "True": 52,
+        "None": 11,
+        "False": 19
+      },
+      "unique_problem_model_effort_label_counts": {
+        "True": 52,
+        "None": 11,
+        "False": 19
+      },
+      "row_label_counts_by_model_effort": {
+        "Qwen/Qwen3.5-4B | default": {
+          "True": 8,
+          "None": 2,
+          "False": 4
+        },
+        "Skywork/Skywork-OR1-Math-7B | default": {
+          "True": 2,
+          "False": 1
+        },
+        "allenai/Olmo-3-7B-Think | default": {
+          "True": 7,
+          "None": 1,
+          "False": 2
+        },
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B | default": {
+          "True": 7,
+          "False": 3
+        },
+        "openai/gpt-oss-120b | high": {
+          "True": 13,
+          "None": 3,
+          "False": 2
+        },
+        "openai/gpt-oss-120b | low": {
+          "True": 5,
+          "None": 1,
+          "False": 2
+        },
+        "openai/gpt-oss-120b | medium": {
+          "True": 10,
+          "None": 4,
+          "False": 5
+        }
+      },
+      "model_ids": [
+        "Qwen/Qwen3.5-4B",
+        "Skywork/Skywork-OR1-Math-7B",
+        "allenai/Olmo-3-7B-Think",
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+        "openai/gpt-oss-120b"
+      ],
+      "reasoning_efforts": [
+        "default",
+        "high",
+        "low",
+        "medium"
+      ],
+      "dataset_ids": [],
+      "distinct_problem_ids": 0,
+      "distinct_normalized_problem_texts": 36,
+      "problem_model_effort_groups": 82,
+      "repeated_rows_for_same_problem_model_effort": 0,
+      "exact_duplicate_audit_projection_rows": 0,
+      "groups_with_conflicting_labels": 0,
+      "dataset_server_truncated_cells_by_column": {},
+      "audit_projection_sha256": "0a051b8112d06ea9cc87d520af005643f8c12df7a6a7a133f3cb96ee0c06ff11",
+      "public": true,
+      "gated": false,
+      "license_metadata": "other",
+      "metadata_tags": [
+        "license:other",
+        "size_categories:n<1K",
+        "format:parquet",
+        "modality:text",
+        "library:datasets",
+        "library:pandas",
+        "library:polars",
+        "library:mlcroissant",
+        "region:us"
+      ],
+      "exact_normalized_problem_text_overlap_with_train_main_v2": 36,
+      "exact_evaluation_model_id_matches": [
+        "Qwen/Qwen3.5-4B",
+        "Skywork/Skywork-OR1-Math-7B",
+        "allenai/Olmo-3-7B-Think",
+        "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B",
+        "openai/gpt-oss-120b"
+      ]
+    }
+  ]
+}
+
